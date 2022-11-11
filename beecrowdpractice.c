@@ -1,37 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int a,b;
-    scanf("%d %d",&a,&b);
-    int arr1[a];
-    int x;
-    for(int i=0;i<a;i++)
+    int n;
+    double mat[12][12];
+    scanf("%d",&n);
+    char ch[2];
+    gets(ch);
+    float sum=0.0;
+    for(int i=0; i<12; i++)
     {
-        scanf("%d",&arr1[i]);
-    }
-    for(int i=0;i<a;i++)
-    {
-        for(int j=i+1;j<a;j++)
+        for(int j=0; j<12; j++)
         {
-            if(arr1[i]<arr1[j])
-            {
-                int temp=arr1[i];
-                arr1[i]=arr1[j];
-                arr1[j]=temp;
-            }
+            scanf("%lf",&mat[i][j]);
         }
     }
-
-    for(int i=0;i<a;i++)
+    for(i = 0; i < 12; i++)
     {
-        printf("%d   ",arr1[i]);
+        sum += mat[i][n];
     }
-    printf("\n");
-
-    for(int i=0;i<b;i++)
-    {
-        scanf("%d",&x);
-        printf("%d\n",arr1[x-1]);
-    }
+    if(ch=='S')
+        printf("%0.1lff\n",sum);
+    else if(ch=='M')
+        printf("%0.1lf\n",sum/12);
     return 0;
 }
